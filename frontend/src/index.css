@@ -104,3 +104,15 @@ code {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+    .mobile-padding {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    input, select, textarea {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+}
