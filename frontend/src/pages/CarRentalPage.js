@@ -37,11 +37,11 @@ export default function CarRentalPage() {
             <div className="bg-white rounded-xl shadow-lg p-4 sm:p-5 md:p-6 lg:sticky lg:top-4" data-testid="filters-sidebar">
               <h2 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-gray-800">Filtres</h2>
               
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <Label className="text-gray-700 font-medium mb-2 block">Ville</Label>
+                  <Label className="text-gray-700 font-medium mb-2 block text-sm">Ville</Label>
                   <Select value={filters.city} onValueChange={(value) => setFilters({...filters, city: value})}>
-                    <SelectTrigger data-testid="city-filter">
+                    <SelectTrigger data-testid="city-filter" className="h-10 text-sm">
                       <SelectValue placeholder="Toutes les villes" />
                     </SelectTrigger>
                     <SelectContent>
