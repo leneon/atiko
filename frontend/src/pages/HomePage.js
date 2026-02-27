@@ -1,10 +1,10 @@
 import React from 'react';
 import { Car, Bus, Plane, Shield, Clock, Headphones } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from './components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
-import { Input } from './components/ui/input';
-import { Label } from './components/ui/label';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { mockCars } from './utils/mockData';
 
 export default function HomePage() {
