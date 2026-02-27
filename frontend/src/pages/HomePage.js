@@ -182,22 +182,22 @@ export default function HomePage() {
       </section>
 
       {/* Popular Cars Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-12">
-            <h2 className="text-4xl font-bold text-gray-800" style={{ fontFamily: 'Work Sans' }}>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 md:mb-12 gap-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800" style={{ fontFamily: 'Work Sans' }}>
               Véhicules populaires
             </h2>
             <Button 
               onClick={() => navigate('/cars')} 
               variant="outline" 
-              className="border-[#38BDF8] text-[#38BDF8] hover:bg-[#38BDF8] hover:text-white"
+              className="border-[#38BDF8] text-[#38BDF8] hover:bg-[#38BDF8] hover:text-white w-full sm:w-auto"
               data-testid="view-all-cars-btn"
             >
               Voir tout
             </Button>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {mockCars.slice(0, 3).map((car) => (
               <div key={car.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover-lift car-card" data-testid={`popular-car-${car.id}`}>
                 <img src={car.image} alt={car.name} className="w-full h-48 object-cover" />
