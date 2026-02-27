@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden py-12 md:py-0">
         <div 
           className="absolute inset-0 z-0"
           style={{
@@ -32,18 +32,18 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8]/85 via-[#0EA5E9]/75 to-[#FDBA74]/70"></div>
         </div>
         
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
-          <div className="text-center mb-8 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4" style={{ fontFamily: 'Work Sans' }}>
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-3 sm:px-4">
+          <div className="text-center mb-6 md:mb-8 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 md:mb-4 px-2" style={{ fontFamily: 'Work Sans' }}>
               Voyagez avec Atiko
             </h1>
-            <p className="text-xl md:text-2xl text-white/95">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 px-4">
               Votre partenaire de confiance pour tous vos déplacements
             </p>
           </div>
 
           {/* Search Box */}
-          <div className="glass-dark rounded-2xl p-6 shadow-2xl max-w-4xl mx-auto" data-testid="search-box">
+          <div className="glass-dark rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 shadow-2xl max-w-4xl mx-auto" data-testid="search-box">
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-3 mb-6 bg-white/50">
                 <TabsTrigger value="car" className="flex items-center gap-2" data-testid="tab-car">
