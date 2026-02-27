@@ -54,9 +54,9 @@ export default function CarRentalPage() {
                 </div>
 
                 <div>
-                  <Label className="text-gray-700 font-medium mb-2 block">Catégorie</Label>
+                  <Label className="text-gray-700 font-medium mb-2 block text-sm">Catégorie</Label>
                   <Select value={filters.category} onValueChange={(value) => setFilters({...filters, category: value})}>
-                    <SelectTrigger data-testid="category-filter">
+                    <SelectTrigger data-testid="category-filter" className="h-10 text-sm">
                       <SelectValue placeholder="Toutes catégories" />
                     </SelectTrigger>
                     <SelectContent>
