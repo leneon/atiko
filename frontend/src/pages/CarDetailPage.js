@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Car, Users, Fuel, Settings, Star, MapPin, Calendar } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Label } from '../components/ui/label';
-import { mockCars } from '../utils/mockData';
-import { isAuthenticated } from '../utils/auth';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { mockCars } from '@/utils/mockData';
+import { isAuthenticated } from '@/utils/auth';
 
 export default function CarDetailPage() {
   const { id } = useParams();
