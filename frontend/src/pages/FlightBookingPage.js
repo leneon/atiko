@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Plane, Clock, Users } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Label } from '../components/ui/label';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
-import { mockFlights, airports } from '../utils/mockData';
-import { isAuthenticated } from '../utils/auth';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { mockFlights, airports } from '@/utils/mockData';
+import { isAuthenticated } from '@/utils/auth';
 
 export default function FlightBookingPage() {
   const navigate = useNavigate();
