@@ -263,14 +263,14 @@ export default function HomePage() {
               { name: 'Moussa Sall', text: 'Très pratique pour mes voyages d\'affaires. Je recommande !', rating: 5 },
               { name: 'Awa Ndiaye', text: 'Prix compétitifs et support client réactif. Parfait !', rating: 5 }
             ].map((testimonial, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-xl shadow-lg" data-testid={`testimonial-${idx}`}>
-                <div className="flex mb-4">
+              <div key={idx} className="bg-white p-5 sm:p-6 rounded-xl shadow-lg" data-testid={`testimonial-${idx}`}>
+                <div className="flex mb-3 md:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">★</span>
+                    <span key={i} className="text-yellow-400 text-lg sm:text-xl">★</span>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
-                <p className="font-bold text-gray-800">{testimonial.name}</p>
+                <p className="text-gray-600 text-sm sm:text-base mb-3 md:mb-4 italic">"{testimonial.text}"</p>
+                <p className="font-bold text-gray-800 text-sm sm:text-base">{testimonial.name}</p>
               </div>
             ))}
           </div>
