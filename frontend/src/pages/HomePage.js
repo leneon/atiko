@@ -29,7 +29,7 @@ export default function HomePage() {
             backgroundPosition: 'center'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8]/90 to-[#0EA5E9]/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8]/85 via-[#0EA5E9]/75 to-[#FDBA74]/70"></div>
         </div>
         
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
