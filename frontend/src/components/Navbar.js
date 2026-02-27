@@ -55,6 +55,24 @@ export default function Navbar() {
             >
               Vols
             </Link>
+            <Link 
+              to="/about" 
+              className={`text-gray-700 hover:text-[#38BDF8] font-medium transition-colors ${
+                isActive('/about') ? 'text-[#38BDF8]' : ''
+              }`}
+              data-testid="nav-about"
+            >
+              À propos
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`text-gray-700 hover:text-[#38BDF8] font-medium transition-colors ${
+                isActive('/contact') ? 'text-[#38BDF8]' : ''
+              }`}
+              data-testid="nav-contact"
+            >
+              Contact
+            </Link>
           </div>
 
           {/* Auth Buttons */}
