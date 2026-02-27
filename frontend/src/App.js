@@ -2,16 +2,16 @@ import React from 'react';
 import '@/App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import CarRentalPage from './pages/CarRentalPage';
-import CarDetailPage from './pages/CarDetailPage';
-import BusBookingPage from './pages/BusBookingPage';
-import FlightBookingPage from './pages/FlightBookingPage';
-import CheckoutPage from './pages/CheckoutPage';
-import AuthPage from './pages/AuthPage';
-import DashboardPage from './pages/DashboardPage';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import HomePage from '@/pages/HomePage';
+import CarRentalPage from '@/pages/CarRentalPage';
+import CarDetailPage from '@/pages/CarDetailPage';
+import BusBookingPage from '@/pages/BusBookingPage';
+import FlightBookingPage from '@/pages/FlightBookingPage';
+import CheckoutPage from '@/pages/CheckoutPage';
+import AuthPage from '@/pages/AuthPage';
+import DashboardPage from '@/pages/DashboardPage';
 
 function App() {
   return (
