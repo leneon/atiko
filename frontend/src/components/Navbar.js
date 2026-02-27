@@ -146,6 +146,20 @@ export default function Navbar() {
             >
               Vols
             </Link>
+            <Link 
+              to="/about" 
+              className="block py-2 text-gray-700 hover:text-[#38BDF8] font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              À propos
+            </Link>
+            <Link 
+              to="/contact" 
+              className="block py-2 text-gray-700 hover:text-[#38BDF8] font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
             <div className="pt-3 border-t space-y-2">
               {authenticated ? (
                 <Button 
