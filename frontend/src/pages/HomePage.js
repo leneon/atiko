@@ -200,22 +200,22 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {mockCars.slice(0, 3).map((car) => (
               <div key={car.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover-lift car-card" data-testid={`popular-car-${car.id}`}>
-                <img src={car.image} alt={car.name} className="w-full h-48 object-cover" />
-                <div className="p-6">
+                <img src={car.image} alt={car.name} className="w-full h-44 sm:h-48 object-cover" />
+                <div className="p-4 sm:p-5 md:p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-bold text-gray-800">{car.name}</h3>
-                    <span className="text-sm bg-[#38BDF8]/10 text-[#38BDF8] px-3 py-1 rounded-full font-medium">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800">{car.name}</h3>
+                    <span className="text-xs sm:text-sm bg-[#38BDF8]/10 text-[#38BDF8] px-2 sm:px-3 py-1 rounded-full font-medium">
                       {car.category}
                     </span>
                   </div>
-                  <p className="text-gray-600 text-sm mb-4">{car.city}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-[#38BDF8]">{car.price.toLocaleString()} FCFA</span>
-                    <span className="text-sm text-gray-500">/ jour</span>
+                  <p className="text-gray-600 text-sm mb-3 md:mb-4">{car.city}</p>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xl sm:text-2xl font-bold text-[#38BDF8]">{car.price.toLocaleString()}</span>
+                    <span className="text-xs sm:text-sm text-gray-500">FCFA/jour</span>
                   </div>
                   <Button 
                     onClick={() => navigate(`/cars/${car.id}`)} 
-                    className="w-full mt-4 bg-[#38BDF8] hover:bg-[#0EA5E9]"
+                    className="w-full bg-[#38BDF8] hover:bg-[#0EA5E9] h-10 sm:h-auto"
                     data-testid={`book-car-${car.id}-btn`}
                   >
                     Réserver
