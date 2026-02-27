@@ -25,17 +25,17 @@ export default function CarRentalPage() {
   });
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
-      <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8" style={{ fontFamily: 'Work Sans' }} data-testid="car-rental-title">
+    <div className="min-h-screen bg-slate-50 py-4 sm:py-6 md:py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 md:mb-8" style={{ fontFamily: 'Work Sans' }} data-testid="car-rental-title">
           Location de voitures
         </h1>
 
-        <div className="grid lg:grid-cols-4 gap-6">
+        <div className="grid lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
           {/* Filters Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl shadow-lg p-6 sticky top-4" data-testid="filters-sidebar">
-              <h2 className="text-xl font-bold mb-6 text-gray-800">Filtres</h2>
+            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-5 md:p-6 lg:sticky lg:top-4" data-testid="filters-sidebar">
+              <h2 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-gray-800">Filtres</h2>
               
               <div className="space-y-4">
                 <div>
