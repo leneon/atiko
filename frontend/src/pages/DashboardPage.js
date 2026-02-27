@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Car, Bus, Plane, Download, Calendar, CreditCard, User, LogOut } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
-import { getCurrentUser, logout } from '../utils/auth';
-import { getBookings, cancelBooking } from '../utils/bookings';
-import { generateTicketPDF } from '../utils/pdf';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { getCurrentUser, logout } from '@/utils/auth';
+import { getBookings, cancelBooking } from '@/utils/bookings';
+import { generateTicketPDF } from '@/utils/pdf';
 
 export default function DashboardPage() {
   const navigate = useNavigate();
