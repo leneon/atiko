@@ -1,34 +1,62 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(56, 189, 248, 0.15);
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.btn-primary {
+    background: #38BDF8;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.App-link {
-    color: #61dafb;
+.btn-primary:hover {
+    background: #0EA5E9;
+    transform: scale(1.02);
 }
 
-@keyframes App-logo-spin {
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
     from {
-        transform: rotate(0deg);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-        transform: rotate(360deg);
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+.animate-slide-in {
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.car-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.car-card:hover {
+    border-color: #38BDF8;
+    box-shadow: 0 8px 32px rgba(56, 189, 248, 0.2);
 }
