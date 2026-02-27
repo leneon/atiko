@@ -107,61 +107,61 @@ export default function CarRentalPage() {
 
           {/* Cars Grid */}
           <div className="lg:col-span-3">
-            <div className="mb-6">
-              <p className="text-gray-600" data-testid="results-count">
+            <div className="mb-4 sm:mb-6">
+              <p className="text-gray-600 text-sm sm:text-base" data-testid="results-count">
                 {filteredCars.length} véhicule{filteredCars.length > 1 ? 's' : ''} disponible{filteredCars.length > 1 ? 's' : ''}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
               {filteredCars.map((car) => (
                 <div key={car.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover-lift car-card" data-testid={`car-card-${car.id}`}>
-                  <div className="relative h-56">
+                  <div className="relative h-48 sm:h-52 md:h-56">
                     <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
-                    <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full shadow-lg">
-                      <span className="text-sm font-bold text-[#38BDF8]">{car.category}</span>
+                    <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-white px-2 sm:px-3 py-1 rounded-full shadow-lg">
+                      <span className="text-xs sm:text-sm font-bold text-[#38BDF8]">{car.category}</span>
                     </div>
                   </div>
                   
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-2xl font-bold text-gray-800">{car.name}</h3>
+                  <div className="p-4 sm:p-5 md:p-6">
+                    <div className="flex items-center justify-between mb-2 sm:mb-3">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">{car.name}</h3>
                       <div className="flex items-center">
                         <span className="text-yellow-400 mr-1">★</span>
-                        <span className="text-sm font-medium text-gray-700">{car.rating}</span>
+                        <span className="text-xs sm:text-sm font-medium text-gray-700">{car.rating}</span>
                       </div>
                     </div>
                     
-                    <p className="text-gray-500 mb-4 flex items-center">
-                      <Car className="h-4 w-4 mr-2" />
+                    <p className="text-gray-500 mb-3 sm:mb-4 flex items-center text-sm">
+                      <Car className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
                       {car.city}
                     </p>
 
-                    <div className="grid grid-cols-3 gap-3 mb-4 text-sm">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-3 sm:mb-4 text-xs sm:text-sm">
                       <div className="flex items-center text-gray-600">
-                        <Settings className="h-4 w-4 mr-1" />
-                        {car.transmission}
+                        <Settings className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                        <span className="truncate">{car.transmission}</span>
                       </div>
                       <div className="flex items-center text-gray-600">
-                        <Users className="h-4 w-4 mr-1" />
-                        {car.seats} places
+                        <Users className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                        {car.seats}
                       </div>
                       <div className="flex items-center text-gray-600">
-                        <Fuel className="h-4 w-4 mr-1" />
-                        {car.fuel}
+                        <Fuel className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                        <span className="truncate">{car.fuel}</span>
                       </div>
                     </div>
 
-                    <div className="border-t pt-4 flex items-center justify-between">
+                    <div className="border-t pt-3 sm:pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                       <div>
-                        <span className="text-3xl font-bold text-[#38BDF8]">{car.price.toLocaleString()}</span>
-                        <span className="text-gray-500 ml-2">FCFA/jour</span>
+                        <span className="text-2xl sm:text-3xl font-bold text-[#38BDF8]">{car.price.toLocaleString()}</span>
+                        <span className="text-gray-500 ml-2 text-xs sm:text-sm">FCFA/j</span>
                       </div>
                     </div>
 
                     <Button 
                       onClick={() => navigate(`/cars/${car.id}`)} 
-                      className="w-full mt-4 bg-[#38BDF8] hover:bg-[#0EA5E9] h-11"
+                      className="w-full mt-3 sm:mt-4 bg-[#38BDF8] hover:bg-[#0EA5E9] h-10 sm:h-11 text-sm sm:text-base"
                       data-testid={`view-car-${car.id}-btn`}
                     >
                       Voir les détails
