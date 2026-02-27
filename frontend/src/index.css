@@ -25,12 +25,12 @@ code {
         --popover-foreground: 222 47% 11%;
         --primary: 199 89% 61%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 210 40% 96%;
+        --secondary: 24 95% 77%;
         --secondary-foreground: 222 47% 11%;
+        --accent: 158 64% 72%;
+        --accent-foreground: 222 47% 11%;
         --muted: 210 40% 96%;
         --muted-foreground: 215 16% 47%;
-        --accent: 199 89% 61%;
-        --accent-foreground: 0 0% 100%;
         --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 98%;
         --border: 214 32% 91%;
@@ -83,6 +83,14 @@ code {
 
 .sky-gradient {
     background: linear-gradient(135deg, #38BDF8 0%, #7DD3FC 100%);
+}
+
+.peach-gradient {
+    background: linear-gradient(135deg, #FDBA74 0%, #FCA5A5 100%);
+}
+
+.mint-gradient {
+    background: linear-gradient(135deg, #6EE7B7 0%, #A7F3D0 100%);
 }
 
 .glass {
