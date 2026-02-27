@@ -228,22 +228,22 @@ export default function HomePage() {
       </section>
 
       {/* Destinations Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+      <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800" style={{ fontFamily: 'Work Sans' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 px-4" style={{ fontFamily: 'Work Sans' }}>
             Destinations populaires
           </h2>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {[
               { name: 'Dakar', image: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500' },
               { name: 'Saint-Louis', image: 'https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=500' },
               { name: 'Thiès', image: 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=500' },
               { name: 'Saly', image: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=500' }
             ].map((dest, idx) => (
-              <div key={idx} className="relative h-64 rounded-xl overflow-hidden hover-lift cursor-pointer group" data-testid={`destination-${idx}`}>
+              <div key={idx} className="relative h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden hover-lift cursor-pointer group" data-testid={`destination-${idx}`}>
                 <img src={dest.image} alt={dest.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                  <h3 className="text-white text-2xl font-bold">{dest.name}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 sm:p-5 md:p-6">
+                  <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold">{dest.name}</h3>
                 </div>
               </div>
             ))}
@@ -252,12 +252,12 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800" style={{ fontFamily: 'Work Sans' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 px-4" style={{ fontFamily: 'Work Sans' }}>
             Ce que disent nos clients
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               { name: 'Fatou Diop', text: 'Service excellent ! J\'ai réservé une voiture en quelques minutes.', rating: 5 },
               { name: 'Moussa Sall', text: 'Très pratique pour mes voyages d\'affaires. Je recommande !', rating: 5 },
