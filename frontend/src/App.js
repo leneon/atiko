@@ -12,6 +12,8 @@ import FlightBookingPage from '@/pages/FlightBookingPage';
 import CheckoutPage from '@/pages/CheckoutPage';
 import AuthPage from '@/pages/AuthPage';
 import DashboardPage from '@/pages/DashboardPage';
+import AboutPage from '@/pages/AboutPage';
+import ContactPage from '@/pages/ContactPage';
 
 function App() {
   return (
