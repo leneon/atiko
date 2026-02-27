@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Car, Menu, X, User } from 'lucide-react';
-import { Button } from './ui/button';
-import { isAuthenticated } from '../utils/auth';
+import { Button } from '@/components/ui/button';
+import { isAuthenticated } from '@/utils/auth';
 
 export default function Navbar() {
   const navigate = useNavigate();
