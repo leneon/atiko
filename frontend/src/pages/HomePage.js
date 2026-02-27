@@ -45,99 +45,100 @@ export default function HomePage() {
           {/* Search Box */}
           <div className="glass-dark rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 shadow-2xl max-w-4xl mx-auto" data-testid="search-box">
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-6 bg-white/50">
-                <TabsTrigger value="car" className="flex items-center gap-2" data-testid="tab-car">
-                  <Car className="h-4 w-4" />
-                  Voiture
+              <TabsList className="grid w-full grid-cols-3 mb-4 md:mb-6 bg-white/50 h-auto">
+                <TabsTrigger value="car" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm py-2" data-testid="tab-car">
+                  <Car className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="hidden xs:inline">Voiture</span>
+                  <span className="xs:hidden">Auto</span>
                 </TabsTrigger>
-                <TabsTrigger value="bus" className="flex items-center gap-2" data-testid="tab-bus">
-                  <Bus className="h-4 w-4" />
+                <TabsTrigger value="bus" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm py-2" data-testid="tab-bus">
+                  <Bus className="h-3 w-3 sm:h-4 sm:w-4" />
                   Bus
                 </TabsTrigger>
-                <TabsTrigger value="flight" className="flex items-center gap-2" data-testid="tab-flight">
-                  <Plane className="h-4 w-4" />
+                <TabsTrigger value="flight" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm py-2" data-testid="tab-flight">
+                  <Plane className="h-3 w-3 sm:h-4 sm:w-4" />
                   Avion
                 </TabsTrigger>
               </TabsList>
 
-              <TabsContent value="car" className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
+              <TabsContent value="car" className="space-y-3 md:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <Label className="text-gray-700 font-medium">Ville</Label>
-                    <Input placeholder="Où souhaitez-vous louer ?" className="mt-1" data-testid="car-city-input" />
+                    <Label className="text-gray-700 font-medium text-sm">Ville</Label>
+                    <Input placeholder="Où souhaitez-vous louer ?" className="mt-1 h-10 md:h-auto" data-testid="car-city-input" />
                   </div>
                   <div>
-                    <Label className="text-gray-700 font-medium">Type de véhicule</Label>
-                    <Input placeholder="Berline, SUV, Économique..." className="mt-1" data-testid="car-type-input" />
+                    <Label className="text-gray-700 font-medium text-sm">Type de véhicule</Label>
+                    <Input placeholder="Berline, SUV..." className="mt-1 h-10 md:h-auto" data-testid="car-type-input" />
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <Label className="text-gray-700 font-medium">Date de début</Label>
-                    <Input type="date" className="mt-1" data-testid="car-start-date" />
+                    <Label className="text-gray-700 font-medium text-sm">Date de début</Label>
+                    <Input type="date" className="mt-1 h-10 md:h-auto" data-testid="car-start-date" />
                   </div>
                   <div>
-                    <Label className="text-gray-700 font-medium">Date de fin</Label>
-                    <Input type="date" className="mt-1" data-testid="car-end-date" />
+                    <Label className="text-gray-700 font-medium text-sm">Date de fin</Label>
+                    <Input type="date" className="mt-1 h-10 md:h-auto" data-testid="car-end-date" />
                   </div>
                 </div>
                 <Button 
                   onClick={() => handleSearch('car')} 
-                  className="w-full bg-[#38BDF8] hover:bg-[#0EA5E9] text-white h-12 text-lg font-semibold"
+                  className="w-full bg-[#38BDF8] hover:bg-[#0EA5E9] text-white h-11 md:h-12 text-base md:text-lg font-semibold"
                   data-testid="search-car-btn"
                 >
                   Rechercher des voitures
                 </Button>
               </TabsContent>
 
-              <TabsContent value="bus" className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
+              <TabsContent value="bus" className="space-y-3 md:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <Label className="text-gray-700 font-medium">Ville de départ</Label>
-                    <Input placeholder="Dakar" className="mt-1" data-testid="bus-from-input" />
+                    <Label className="text-gray-700 font-medium text-sm">Ville de départ</Label>
+                    <Input placeholder="Dakar" className="mt-1 h-10 md:h-auto" data-testid="bus-from-input" />
                   </div>
                   <div>
-                    <Label className="text-gray-700 font-medium">Ville d'arrivée</Label>
-                    <Input placeholder="Thiès" className="mt-1" data-testid="bus-to-input" />
+                    <Label className="text-gray-700 font-medium text-sm">Ville d'arrivée</Label>
+                    <Input placeholder="Thiès" className="mt-1 h-10 md:h-auto" data-testid="bus-to-input" />
                   </div>
                 </div>
                 <div>
-                  <Label className="text-gray-700 font-medium">Date de voyage</Label>
-                  <Input type="date" className="mt-1" data-testid="bus-date-input" />
+                  <Label className="text-gray-700 font-medium text-sm">Date de voyage</Label>
+                  <Input type="date" className="mt-1 h-10 md:h-auto" data-testid="bus-date-input" />
                 </div>
                 <Button 
                   onClick={() => handleSearch('bus')} 
-                  className="w-full bg-[#38BDF8] hover:bg-[#0EA5E9] text-white h-12 text-lg font-semibold"
+                  className="w-full bg-[#38BDF8] hover:bg-[#0EA5E9] text-white h-11 md:h-12 text-base md:text-lg font-semibold"
                   data-testid="search-bus-btn"
                 >
                   Rechercher des bus
                 </Button>
               </TabsContent>
 
-              <TabsContent value="flight" className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
+              <TabsContent value="flight" className="space-y-3 md:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <Label className="text-gray-700 font-medium">Aéroport de départ</Label>
-                    <Input placeholder="DSS - Dakar" className="mt-1" data-testid="flight-from-input" />
+                    <Label className="text-gray-700 font-medium text-sm">Aéroport de départ</Label>
+                    <Input placeholder="DSS - Dakar" className="mt-1 h-10 md:h-auto" data-testid="flight-from-input" />
                   </div>
                   <div>
-                    <Label className="text-gray-700 font-medium">Aéroport d'arrivée</Label>
-                    <Input placeholder="CDG - Paris" className="mt-1" data-testid="flight-to-input" />
+                    <Label className="text-gray-700 font-medium text-sm">Aéroport d'arrivée</Label>
+                    <Input placeholder="CDG - Paris" className="mt-1 h-10 md:h-auto" data-testid="flight-to-input" />
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <Label className="text-gray-700 font-medium">Date de départ</Label>
-                    <Input type="date" className="mt-1" data-testid="flight-depart-date" />
+                    <Label className="text-gray-700 font-medium text-sm">Date de départ</Label>
+                    <Input type="date" className="mt-1 h-10 md:h-auto" data-testid="flight-depart-date" />
                   </div>
                   <div>
-                    <Label className="text-gray-700 font-medium">Date de retour</Label>
-                    <Input type="date" className="mt-1" data-testid="flight-return-date" />
+                    <Label className="text-gray-700 font-medium text-sm">Date de retour</Label>
+                    <Input type="date" className="mt-1 h-10 md:h-auto" data-testid="flight-return-date" />
                   </div>
                 </div>
                 <Button 
                   onClick={() => handleSearch('flight')} 
-                  className="w-full bg-[#38BDF8] hover:bg-[#0EA5E9] text-white h-12 text-lg font-semibold"
+                  className="w-full bg-[#38BDF8] hover:bg-[#0EA5E9] text-white h-11 md:h-12 text-base md:text-lg font-semibold"
                   data-testid="search-flight-btn"
                 >
                   Rechercher des vols
