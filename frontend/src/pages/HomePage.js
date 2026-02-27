@@ -150,32 +150,32 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
+      <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800" style={{ fontFamily: 'Work Sans' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 px-4" style={{ fontFamily: 'Work Sans' }}>
             Pourquoi choisir Atiko ?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg hover-lift text-center" data-testid="feature-payment">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#6EE7B7] to-[#34D399] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-white" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg hover-lift text-center" data-testid="feature-payment">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#6EE7B7] to-[#34D399] rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <Shield className="h-7 w-7 md:h-8 md:w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-800">Paiement sécurisé</h3>
-              <p className="text-gray-600">Transactions 100% sécurisées avec Stripe et Mobile Money</p>
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-800">Paiement sécurisé</h3>
+              <p className="text-sm md:text-base text-gray-600">Transactions 100% sécurisées avec Stripe et Mobile Money</p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg hover-lift text-center" data-testid="feature-speed">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#FDBA74] to-[#FB923C] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-white" />
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg hover-lift text-center" data-testid="feature-speed">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#FDBA74] to-[#FB923C] rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <Clock className="h-7 w-7 md:h-8 md:w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-800">Réservation rapide</h3>
-              <p className="text-gray-600">Réservez en quelques clics seulement</p>
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-800">Réservation rapide</h3>
+              <p className="text-sm md:text-base text-gray-600">Réservez en quelques clics seulement</p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg hover-lift text-center" data-testid="feature-support">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#38BDF8] to-[#0EA5E9] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Headphones className="h-8 w-8 text-white" />
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg hover-lift text-center sm:col-span-2 md:col-span-1" data-testid="feature-support">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#38BDF8] to-[#0EA5E9] rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <Headphones className="h-7 w-7 md:h-8 md:w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-800">Support 24/7</h3>
-              <p className="text-gray-600">Équipe disponible à tout moment pour vous aider</p>
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-800">Support 24/7</h3>
+              <p className="text-sm md:text-base text-gray-600">Équipe disponible à tout moment pour vous aider</p>
             </div>
           </div>
         </div>
