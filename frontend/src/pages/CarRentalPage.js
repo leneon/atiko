@@ -70,31 +70,33 @@ export default function CarRentalPage() {
                 </div>
 
                 <div>
-                  <Label className="text-gray-700 font-medium mb-2 block">Prix minimum</Label>
+                  <Label className="text-gray-700 font-medium mb-2 block text-sm">Prix minimum</Label>
                   <Input 
                     type="number" 
                     placeholder="20000" 
                     value={filters.minPrice}
                     onChange={(e) => setFilters({...filters, minPrice: e.target.value})}
                     data-testid="min-price-input"
+                    className="h-10 text-sm"
                   />
                 </div>
 
                 <div>
-                  <Label className="text-gray-700 font-medium mb-2 block">Prix maximum</Label>
+                  <Label className="text-gray-700 font-medium mb-2 block text-sm">Prix maximum</Label>
                   <Input 
                     type="number" 
                     placeholder="150000" 
                     value={filters.maxPrice}
                     onChange={(e) => setFilters({...filters, maxPrice: e.target.value})}
                     data-testid="max-price-input"
+                    className="h-10 text-sm"
                   />
                 </div>
 
                 <Button 
                   onClick={() => setFilters({ city: '', category: '', minPrice: '', maxPrice: '' })} 
                   variant="outline" 
-                  className="w-full"
+                  className="w-full h-10 text-sm"
                   data-testid="reset-filters-btn"
                 >
                   Réinitialiser
