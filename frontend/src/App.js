@@ -29,6 +29,8 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
         <Toaster position="top-right" />
