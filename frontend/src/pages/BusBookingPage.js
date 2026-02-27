@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bus, Clock, Users, Wifi, Coffee } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Label } from '../components/ui/label';
-import { mockBuses, cities } from '../utils/mockData';
-import { isAuthenticated } from '../utils/auth';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { mockBuses, cities } from '@/utils/mockData';
+import { isAuthenticated } from '@/utils/auth';
 
 export default function BusBookingPage() {
   const navigate = useNavigate();
