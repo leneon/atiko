@@ -149,29 +149,29 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800" style={{ fontFamily: 'Work Sans' }}>
             Pourquoi choisir Atiko ?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-lg hover-lift text-center" data-testid="feature-payment">
-              <div className="w-16 h-16 bg-[#38BDF8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-[#38BDF8]" />
+              <div className="w-16 h-16 bg-gradient-to-br from-[#6EE7B7] to-[#34D399] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">Paiement sécurisé</h3>
               <p className="text-gray-600">Transactions 100% sécurisées avec Stripe et Mobile Money</p>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-lg hover-lift text-center" data-testid="feature-speed">
-              <div className="w-16 h-16 bg-[#38BDF8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-[#38BDF8]" />
+              <div className="w-16 h-16 bg-gradient-to-br from-[#FDBA74] to-[#FB923C] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">Réservation rapide</h3>
               <p className="text-gray-600">Réservez en quelques clics seulement</p>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-lg hover-lift text-center" data-testid="feature-support">
-              <div className="w-16 h-16 bg-[#38BDF8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Headphones className="h-8 w-8 text-[#38BDF8]" />
+              <div className="w-16 h-16 bg-gradient-to-br from-[#38BDF8] to-[#0EA5E9] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Headphones className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-800">Support 24/7</h3>
               <p className="text-gray-600">Équipe disponible à tout moment pour vous aider</p>
