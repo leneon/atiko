@@ -227,7 +227,7 @@ export default function HomePage() {
       </section>
 
       {/* Destinations Section */}
-      <section className="py-20 px-4 bg-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800" style={{ fontFamily: 'Work Sans' }}>
             Destinations populaires
