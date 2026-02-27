@@ -1,0 +1,184 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Car, Users, Fuel, Settings } from 'lucide-react';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Label } from '../components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { mockCars, cities } from '../utils/mockData';
+
+export default function CarRentalPage() {
+  const navigate = useNavigate();
+  const [filters, setFilters] = React.useState({
+    city: '',
+    category: '',
+    minPrice: '',
+    maxPrice: ''
+  });
+
+  const filteredCars = mockCars.filter(car => {
+    if (filters.city && car.city !== filters.city) return false;
+    if (filters.category && car.category !== filters.category) return false;
+    if (filters.minPrice && car.price < parseInt(filters.minPrice)) return false;
+    if (filters.maxPrice && car.price > parseInt(filters.maxPrice)) return false;
+    return true;
+  });
+
+  return (
+    <div className="min-h-screen bg-slate-50 py-8">
+      <div className="max-w-7xl mx-auto px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8" style={{ fontFamily: 'Work Sans' }} data-testid="car-rental-title">
+          Location de voitures
+        </h1>
+
+        <div className="grid lg:grid-cols-4 gap-6">
+          {/* Filters Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-xl shadow-lg p-6 sticky top-4" data-testid="filters-sidebar">
+              <h2 className="text-xl font-bold mb-6 text-gray-800">Filtres</h2>
+              
+              <div className="space-y-4">
+                <div>
+                  <Label className="text-gray-700 font-medium mb-2 block">Ville</Label>
+                  <Select value={filters.city} onValueChange={(value) => setFilters({...filters, city: value})}>
+                    <SelectTrigger data-testid="city-filter">
+                      <SelectValue placeholder="Toutes les villes" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Toutes les villes</SelectItem>
+                      {cities.map(city => (
+                        <SelectItem key={city} value={city}>{city}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label className="text-gray-700 font-medium mb-2 block">Catégorie</Label>
+                  <Select value={filters.category} onValueChange={(value) => setFilters({...filters, category: value})}>
+                    <SelectTrigger data-testid="category-filter">
+                      <SelectValue placeholder="Toutes catégories" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Toutes catégories</SelectItem>
+                      <SelectItem value="Économique">Économique</SelectItem>
+                      <SelectItem value="Berline">Berline</SelectItem>
+                      <SelectItem value="SUV">SUV</SelectItem>
+                      <SelectItem value="Luxe">Luxe</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label className="text-gray-700 font-medium mb-2 block">Prix minimum</Label>
+                  <Input 
+                    type="number" 
+                    placeholder="20000" 
+                    value={filters.minPrice}
+                    onChange={(e) => setFilters({...filters, minPrice: e.target.value})}
+                    data-testid="min-price-input"
+                  />
+                </div>
+
+                <div>
+                  <Label className="text-gray-700 font-medium mb-2 block">Prix maximum</Label>
+                  <Input 
+                    type="number" 
+                    placeholder="150000" 
+                    value={filters.maxPrice}
+                    onChange={(e) => setFilters({...filters, maxPrice: e.target.value})}
+                    data-testid="max-price-input"
+                  />
+                </div>
+
+                <Button 
+                  onClick={() => setFilters({ city: '', category: '', minPrice: '', maxPrice: '' })} 
+                  variant="outline" 
+                  className="w-full"
+                  data-testid="reset-filters-btn"
+                >
+                  Réinitialiser
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Cars Grid */}
+          <div className="lg:col-span-3">
+            <div className="mb-6">
+              <p className="text-gray-600" data-testid="results-count">
+                {filteredCars.length} véhicule{filteredCars.length > 1 ? 's' : ''} disponible{filteredCars.length > 1 ? 's' : ''}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {filteredCars.map((car) => (
+                <div key={car.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover-lift car-card" data-testid={`car-card-${car.id}`}>
+                  <div className="relative h-56">
+                    <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
+                    <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full shadow-lg">
+                      <span className="text-sm font-bold text-[#38BDF8]">{car.category}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-2xl font-bold text-gray-800">{car.name}</h3>
+                      <div className="flex items-center">
+                        <span className="text-yellow-400 mr-1">★</span>
+                        <span className="text-sm font-medium text-gray-700">{car.rating}</span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-500 mb-4 flex items-center">
+                      <Car className="h-4 w-4 mr-2" />
+                      {car.city}
+                    </p>
+
+                    <div className="grid grid-cols-3 gap-3 mb-4 text-sm">
+                      <div className="flex items-center text-gray-600">
+                        <Settings className="h-4 w-4 mr-1" />
+                        {car.transmission}
+                      </div>
+                      <div className="flex items-center text-gray-600">
+                        <Users className="h-4 w-4 mr-1" />
+                        {car.seats} places
+                      </div>
+                      <div className="flex items-center text-gray-600">
+                        <Fuel className="h-4 w-4 mr-1" />
+                        {car.fuel}
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-4 flex items-center justify-between">
+                      <div>
+                        <span className="text-3xl font-bold text-[#38BDF8]">{car.price.toLocaleString()}</span>
+                        <span className="text-gray-500 ml-2">FCFA/jour</span>
+                      </div>
+                    </div>
+
+                    <Button 
+                      onClick={() => navigate(`/cars/${car.id}`)} 
+                      className="w-full mt-4 bg-[#38BDF8] hover:bg-[#0EA5E9] h-11"
+                      data-testid={`view-car-${car.id}-btn`}
+                    >
+                      Voir les détails
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {filteredCars.length === 0 && (
+              <div className="text-center py-20" data-testid="no-results">
+                <Car className="h-20 w-20 text-gray-300 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-gray-400 mb-2">Aucun véhicule trouvé</h3>
+                <p className="text-gray-500">Essayez de modifier vos filtres</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
